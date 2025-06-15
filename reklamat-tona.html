@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Solutions | Zgjidhje Profesionale për Biznesin Tuaj</title>
+    <meta name="description" content="Ofrojmë zgjidhje inovative për bizneset me 10+ vjet përvojë në industri">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ===== Variabla & Reset ===== */
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary: #1f2937;
+            --light: #ffffff;
+            --light-bg: #f9fafb;
+            --dark-text: #111827;
+            --gray-text: #6b7280;
+            --success: #10b981;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ===== Butona ===== */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--light);
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+        }
+
+        .btn-primary {
+    background: #2ecc71; /* Ndrysho në të gjelbër */
+    padding: 12px 25px; /* Rregullo madhësinë */
+    font-size: 1.1rem; /* Ndrysho madhësinë e shkronjave */
+}
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--light);
+            transform: translateY(-3px);
+        }
+
+        /* ===== Header ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 12px 0;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo-text span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 16px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--secondary);
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--light);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-text {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s forwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.4s forwards;
+        }
+
+        /* ===== Features Section ===== */
+        .features {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 20px auto 0;
+            color: var(--gray-text);
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--light-bg);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--gray-text);
+        }
+
+        /* ===== Testimonials ===== */
+        .testimonials {
+            padding: 100px 0;
+            background: linear-gradient(rgba(67, 97, 238, 0.05), rgba(67, 97, 238, 0.05));
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .testimonial-content {
+            position: relative;
+            margin-bottom: 30px;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-content::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: -15px;
+            font-size: 5rem;
+            color: var(--primary);
+            opacity: 0.1;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--primary);
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--gray-text);
+        }
+
+        /* ===== CTA Section ===== */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--light);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .cta::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: var(--secondary);
+            color: var(--light);
+            padding: 100px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 70px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            text-decoration: none;
+        }
+
+        .footer-logo-img {
+            height: 40px;
+        }
+
+        .footer-logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-top: 3px;
+        }
+
+        .contact-text {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* ===== Animations ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 150px 0 80px;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .feature-card {
+                padding: 30px 20px;
+            }
+
+            .testimonial-card {
+                padding: 30px;
+            }
+
+
+            /* Shto në stylesheet-in tuaj */
+.call-section {
+    padding: 80px 0;
+    background: #f9fafb;
+    text-align: center;
+}
+
+.call-form {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.call-form input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.call-form input:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.call-status {
+    margin-top: 20px;
+    font-weight: 500;
+    min-height: 24px;
+    line-height: 1.6;
+}
+
+.btn-copy {
+    transition: all 0.3s ease;
+}
+
+.btn-copy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+.cta {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--light);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.call-button {
+    min-width: 180px;
+}
+
+.request-call-btn {
+    min-width: 180px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid white;
+}
+
+.request-call-btn:hover {
+    background: white;
+    color: var(--primary);
+}
+
+.call-request-form {
+    max-width: 500px;
+    margin: 30px auto 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    display: none; /* Fshehur fillimisht */
+}
+
+.call-request-form .form-group {
+    margin-bottom: 20px;
+}
+
+.call-request-form input {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    border: none;
+    font-size: 1rem;
+}
+
+.call-status {
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .call-button, .request-call-btn {
+        width: 100%;
+    }
+
+
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <img src="NezirajWeb.PNG" alt="NezirajWeb" class="logo-img">
+                    <span class="logo-text">Neziraj<span>Web</span></span>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="#features">Përfitimet</a></li>
+                    <li><a href="#testimonials">Dëshmitë</a></li>
+                    <li><a href="http://localhost:63342/Module26/Porosit%20Online.html?_ijt=rt6tc0vul5m26v7qfhvev5rb0d&_ij_reload=RELOAD_ON_SAVE">Kontakti</a></li>
+                    <li><a href="#contact" class="btn btn-outline">KONSULTOHUNI</a></li>
+                </ul>
+
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Transformoni Biznesin Tuaj me Zgjidhjet Tona</h1>
+                <p class="hero-text">Me më shumë se 10 vjet përvojë në industri, ne ofrojmë zgjidhje të personalizuara që garantojnë suksesin e biznesit tuaj.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">FILLONI TANI</a>
+                    <a href="#features" class="btn btn-outline">MËSONI MË SHUMË</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Përfitimet Tona</h2>
+                <p>Zgjidhje të personalizuara për nevojat specifike të biznesit tuaj</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Rritje e Të Ardhurave</h3>
+                    <p>Strategji të provuara për rritjen e të ardhurave dhe zgjerimin e tregut tuaj.</p>
+                </div>
+
+                <div class="feature-card fade-in delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Zgjidhje Inovative</h3>
+                    <p>Qasje unike dhe kreative për zgjidhjen e problemeve komplekse të biznesit.</p>
+                </div>
+
+                <div class="feature-card fade-in delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Ekspertizë Profesionale</h3>
+                    <p>Ekipi ynë i ekspertëve me vite përvojë do t'ju udhëheqë në çdo hap të procesit.</p>
+                </div>
+
+                <div class="feature-card fade-in delay-3">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Mbështetje 24/7</h3>
+                    <p>Jemi në dispozicionin tuaj çdo kohë për çdo pyetje apo shqetësim që mund të keni.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Dëshmitë e Klientëve</h2>
+                <p>Çfarë thonë klientët tanë për përvojën e tyre me ne</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-content">
+                        <p>"Jam i habitur nga profesionalizmi dhe përkushtimi i ekipit. Projekti u përfundua përpara afatit dhe tejkaloi të gjitha pritjet e mia. Definitivisht do të punoj sërish me ta!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Artan Hoxha</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in delay-1">
+                    <div class="testimonial-content">
+                        <p>"Kemi punuar me shumë kompani gjatë viteve, por kjo ishte përvoja më e mirë. Kuptimi i thellë i nevojave tona dhe zgjidhjet inovative që propozuan na bënë të ndryshojmë mënyrën e të bërit biznes."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">E</div>
+                        <div class="author-info">
+                            <h4>Elda Demiri</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in delay-2">
+                    <div class="testimonial-content">
+                        <p>"Rezultatet që arritëm bashkërisht transformuan biznesin tim. Rekomandoj fuqimisht këtë ekip për çdo biznes që kërkon zgjidhje të vërteta dhe rezultate të prekshme."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">B</div>
+                        <div class="author-info">
+                            <h4>Besar Krasniqi</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+<!-- CTA Section -->
+<section class="cta" id="contact">
+    <div class="container">
+        <h2 class="fade-in">Gati për të transformuar biznesin tuaj?</h2>
+        <p class="fade-in delay-1">Na kontaktoni sot për një konsultim falas dhe të diskutojmë se si mund t'ju ndihmojmë.</p>
+
+        <div class="cta-buttons fade-in delay-2">
+            <!-- Butoni i drejtpërdrejtë për thirrje -->
+            <a href="tel:+38349253145" class="btn btn-primary call-button" id="directCallBtn">
+                <i class="fas fa-phone"></i> THIRR TANI
+            </a>
+
+            <!-- Opsioni për "Më thirrni" -->
+            <button class="btn btn-outline request-call-btn" id="requestCallBtn">
+                <i class="fas fa-phone-volume"></i> MË THIRRNI
+            </button>
+        </div>
+
+        <!-- Forma e fshehur për thirrje (shfaqet kur klikohet "Më thirrni") -->
+        <div class="call-request-form" id="callRequestForm">
+            <form id="callBackForm">
+                <div class="form-group">
+                    <input type="tel" id="callbackNumber" placeholder="+383 XX XXX XXXX" required>
+                    <div class="error-message" id="callbackError"></div>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> DËRGO KERKESËN
+                </button>
+            </form>
+            <div class="call-status" id="callbackStatus"></div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">
+                        <img src="NezirajWeb.PNG" alt="NezirajWeb" class="footer-logo-img">
+                        <span class="footer-logo-text">NezirajWeb</span>
+                    </a>
+                    <p>Ne jemi një kompani me përvojë që ofron zgjidhje inovative për bizneset. Misioni ynë është të ndihmojmë klientët tanë të arrijnë potencialin e tyre maksimal.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Shërbimet</h3>
+                    <ul>
+                        <li><a href="#">Konsulencë Biznesi</a></li>
+                        <li><a href="#">Marketing Digjital</a></li>
+                        <li><a href="#">Zhvillim Web</a></li>
+                        <li><a href="#">Trajnime</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Linqe të Shpejta</h3>
+                    <ul>
+                        <li><a href="#features">Përfitimet</a></li>
+                        <li><a href="#testimonials">Dëshmitë</a></li>
+                        <li><a href="#contact">Kontakti</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Kontakti</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <span class="contact-text">Rr. "Ura Gurit", Peja, Kosova</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <span class="contact-text">+383 49 253 145</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <span class="contact-text">lindijonn@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 NezirajWeb. Të gjitha të drejtat e rezervuara.</p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Elementet
+    const requestCallBtn = document.getElementById('requestCallBtn');
+    const directCallBtn = document.getElementById('directCallBtn');
+    const callRequestForm = document.getElementById('callRequestForm');
+    const callBackForm = document.getElementById('callBackForm');
+    const callbackNumber = document.getElementById('callbackNumber');
+    const callbackError = document.getElementById('callbackError');
+    const callbackStatus = document.getElementById('callbackStatus');
+
+    // Shfaqja e formës për "Më thirrni"
+    if (requestCallBtn) {
+        requestCallBtn.addEventListener('click', function() {
+            callRequestForm.style.display = 'block';
+            this.style.display = 'none';
+        });
+    }
+
+    // Funksioni për thirrje direkte (mobile)
+    if (directCallBtn) {
+        directCallBtn.addEventListener('click', function(e) {
+            // Nëse është desktop, parandalon veprimin e parazgjedhur
+            if (!isMobileDevice()) {
+                e.preventDefault();
+                callbackStatus.innerHTML = `
+                    Ju lutem telefononi në: <strong>+383 49 253 145</strong><br>
+                    <small>Ose përdorni butonin "Më thirrni" për të na lënë numrin tuaj</small>
+                `;
+                callRequestForm.style.display = 'block';
+            }
+        });
+    }
+
+
+
+    // Validimi i formës për thirrje
+    if (callBackForm) {
+        callBackForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const phoneNumber = callbackNumber.value.trim();
+
+            // Validimi i numrit
+            if (!isValidPhoneNumber(phoneNumber)) {
+                callbackError.textContent = "Ju lutem shkruani një numër të vlefshëm telefonik";
+                return;
+            }
+
+            callbackError.textContent = "";
+            callbackStatus.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Po dërgojmë kërkesën...`;
+
+            // Simulim dërgimi të dhënash (në praktikë do të ishte një API call)
+            setTimeout(() => {
+                callbackStatus.innerHTML = `
+                    <span style="color: var(--success)">
+                        <i class="fas fa-check-circle"></i> Kërkesa u dërgua me sukses!
+                    </span><br>
+                    <small>Do t'ju kontaktojmë në numrin ${phoneNumber} brenda 5 minutave</small>
+                `;
+
+                // Nëse është pajisje mobile, mund të fillojmë thirrjen direkt
+                if (isMobileDevice()) {
+                    setTimeout(() => {
+                        window.location.href = `tel:${phoneNumber}`;
+                    }, 2000);
+                }
+            }, 1500);
+        });
+    }
+
+    // Auto-format për numrin e telefonit
+    if (callbackNumber) {
+        callbackNumber.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 0) value = '+' + value;
+            e.target.value = value;
+        });
+    }
+});
+
+// Funksione ndihmëse
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+function isValidPhoneNumber(phone) {
+    return /^\+[0-9]{10,15}$/.test(phone);
+}
+
+
+ function thirrNumrin(phoneNumber) {
+    // Kontrollo nëse pajisja është mobile
+    const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // Në celular e hap direkt thirrjen
+        window.location.href = `tel:${phoneNumber}`;
+    } else {
+        // Në desktop/llaptop e tregon në një alert
+        alert("Ju lutem telefononi këtë numër: " + phoneNumber);
+    }
+}
+
+
+    // ==================== NAVIGATION ====================
+    // Header Scroll Effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Mobile Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.createElement('div');
+    mobileMenu.className = 'mobile-menu';
+    mobileMenu.innerHTML = document.querySelector('.nav-links').outerHTML;
+    document.body.appendChild(mobileMenu);
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+    });
+
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    });
+
+    // ==================== ANIMATIONS ====================
+    // Animate elements on scroll
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const animateOnScroll = function() {
+        fadeElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (elementTop < windowHeight - 100) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    // Initial check
+    animateOnScroll();
+    window.addEventListener('scroll', animateOnScroll);
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // ==================== CALL SYSTEM ====================
+    // Call Me Back functionality
+    const callForm = document.getElementById('callForm');
+    if (callForm) {
+        callForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const phoneNumber = document.getElementById('phoneNumber').value.trim();
+            const callStatus = document.getElementById('callStatus');
+
+            // Validate phone number
+            if (!isValidPhoneNumber(phoneNumber)) {
+                showCallStatus(callStatus, "Ju lutem shkruani një numër të vlefshëm telefonik", "error");
+                return;
+            }
+
+            showCallStatus(callStatus, "Po inicializojmë thirrjen...", "loading");
+
+            // Mobile detection
+            if (isMobileDevice()) {
+                // Direct call for mobile devices
+                initiatePhoneCall(phoneNumber);
+                showCallStatus(callStatus, `Thirrja është inicializuar në ${phoneNumber}`, "success");
+            } else {
+                // For desktop - show number to call
+                showCallStatus(callStatus, `
+                    Ju lutem telefononi në: <strong>${phoneNumber}</strong><br>
+                    <small>Ose kopjoni numrin për ta thirrur manualisht</small>
+                `, "info");
+
+                // Copy to clipboard functionality
+                addCopyToClipboard(phoneNumber, callStatus);
+            }
+        });
+
+        // Auto-format phone number input
+        const phoneInput = document.getElementById('phoneNumber');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 0) value = '+' + value;
+                e.target.value = value;
+            });
+        }
+    }
+
+    // ==================== HELPER FUNCTIONS ====================
+    function isValidPhoneNumber(phone) {
+        // Basic international phone validation
+        return /^\+[0-9]{10,15}$/.test(phone);
+    }
+
+    function isMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    function initiatePhoneCall(phoneNumber) {
+        // This will work on mobile devices
+        window.location.href = `tel:${phoneNumber}`;
+
+        // Fallback for some browsers
+        setTimeout(() => {
+            window.open(`tel:${phoneNumber}`, '_blank');
+        }, 100);
+    }
+
+    function showCallStatus(element, message, type) {
+        if (!element) return;
+
+        element.innerHTML = message;
+        element.style.color =
+            type === "error" ? "#dc2626" :
+            type === "success" ? "#10b981" :
+            type === "loading" ? "#2563eb" : "#4b5563";
+    }
+
+    function addCopyToClipboard(phoneNumber, statusElement) {
+        const copyBtn = document.createElement('button');
+        copyBtn.textContent = 'Kopjo Numrin';
+        copyBtn.className = 'btn-copy';
+        copyBtn.style.marginTop = '10px';
+        copyBtn.style.padding = '8px 15px';
+        copyBtn.style.borderRadius = '6px';
+        copyBtn.style.background = '#e0e7ff';
+        copyBtn.style.color = '#2563eb';
+        copyBtn.style.border = 'none';
+        copyBtn.style.cursor = 'pointer';
+
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(phoneNumber).then(() => {
+                const originalText = copyBtn.textContent;
+                copyBtn.textContent = 'U kopjua!';
+                copyBtn.style.background = '#10b981';
+                copyBtn.style.color = 'white';
+
+                setTimeout(() => {
+                    copyBtn.textContent = originalText;
+                    copyBtn.style.background = '#e0e7ff';
+                    copyBtn.style.color = '#2563eb';
+                }, 2000);
+            });
+        });
+
+        statusElement.appendChild(document.createElement('br'));
+        statusElement.appendChild(copyBtn);
+    }
+
+    // ==================== FORM VALIDATION ====================
+    // Add your form validation logic here if needed
+</script>
+</body>
+</html>
